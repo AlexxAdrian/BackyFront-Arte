@@ -1,0 +1,147 @@
+body {
+  position: relative;
+}
+
+#desenfoque {
+  position: fixed;
+  top: 80%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 1) 100%);
+  filter: blur(10px); 
+  z-index: 9999;
+}
+
+
+.photo-gallery {
+  column-count: 5;
+  column-gap: 0.5em;
+  width: 100%; 
+}
+
+.gallery-item {
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: 0.5em;
+  outline: 2px solid #fff;
+  outline-offset: -10px;
+  overflow: hidden; 
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.edit-button {
+  position: absolute;
+  bottom: 10px; 
+  right: 10px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.edit-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto; 
+  background: rgba(22, 22, 22, 0.1);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: height 0.5s ease-out;
+  text-align: left;
+  padding: 25px;
+  box-sizing: border-box;
+  opacity: 0;
+}
+
+.description-content {
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  margin-bottom: -28px; 
+}
+
+.edit-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.edit-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.gallery-item:hover .description {
+  height: 100%;
+  opacity: 1;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-number {
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, width 0.3s, height 0.3s, border-radius 0.3s; 
+  border-radius: 5px; 
+}
+
+.page-number:hover {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px; 
+}
+
+.page-number.active {
+  background-color: #000;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px; 
+}
+

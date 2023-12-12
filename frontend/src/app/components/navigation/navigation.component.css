@@ -1,0 +1,299 @@
+main {
+  margin-top: 67px; 
+  
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease;
+  background-image: url('./../../../assets/fondo3.jpg');
+  background-size: 120%;
+  animation: fanimado 45s infinite; 
+}
+
+@keyframes animat {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fanimado {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.navbar-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  #navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-image: url('./../../../assets/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #333; 
+    font-family: "DancingScript", cursive;
+  }
+
+
+
+  #navbar-links.active {
+    display: flex;
+    background-color: #808080;
+  }
+
+  #navbar-toggle {
+    display: block;
+  }
+
+  .navbar-links .link-group {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .navbar-links .link-group a {
+    margin: 10px 0;
+  }
+}
+
+.navbar-links {
+  display: flex;
+  font-family: "DancingScript", cursive;
+  
+}
+
+.link-group {
+  display: flex;
+  
+}
+
+.nav-link {
+  color: #ffffff;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.container-input {
+  position: relative;
+}
+
+.input {
+  width: 150px;
+  padding: 10px 0px 10px 40px;
+  border-radius: 9999px;
+  border: solid 1px #333;
+  transition: all .2s ease-in-out;
+  outline: none;
+  opacity: 0.8;
+  font-family: "DancingScript", cursive;
+}
+
+.container-input svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+}
+
+.input:focus {
+  opacity: 1;
+  width: 250px;
+}
+
+.btn {
+  font-size: 13px;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: #ffffff;
+  text-transform: uppercase;
+  position: relative;
+  transition: .5s ease;
+  border-radius: 0.625em;
+  
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ffc506;
+  transition: .5s ease;
+  
+}
+
+.btn:hover {
+  color: rgb(0, 0, 0);
+  transition-delay: .5s;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #ffc506;
+  transition: .4s ease;
+  z-index: -1;
+  border-radius: 0.625em 0.625em 0% 0%;
+}
+
+.btn:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  --border-bottom: 2px solid #37ffee;
+  --animation-color: #37ffee;
+  --fs-size: 2em;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "DancingScript", cursive;
+  position: relative;
+  color: #fff;
+}
+
+.button .hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  height: 150%;
+  inset: 0;
+  border-bottom: var(--border-bottom);
+  overflow: hidden;
+  transition: width 0.5s;
+}
+
+.button:hover .hover-text {
+  width: 100%;
+  height: 150%;
+  filter: drop-shadow(0 0 10px rgba(55, 255, 238, 0.8));
+}
+
+
+
+/*
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  --border-right: 6px;
+  --text-stroke-color: rgb(255, 255, 255);
+  --animation-color: #37ffee;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "CursiveFont", cursive;
+  text-shadow: 2px 2px 4px rgba(55, 255, 238, 0.8);
+  position: relative;
+  text-transform: uppercase;
+  color: #fff; 
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
+*/

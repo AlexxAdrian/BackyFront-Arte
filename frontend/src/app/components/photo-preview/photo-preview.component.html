@@ -1,0 +1,89 @@
+<body class="photo-component-container">
+<div class="row" *ngIf="photo; else main_content">
+    <div class="col-md-5">
+        <div class="card">
+            <img [src]="'http://localhost:4000/' + photo.imagePath" class="img-fluid smaller-image">
+          </div>
+          
+        <button class="button" (click)="deletePhoto(photo._id)">
+            <svg viewBox="0 0 448 512" class="svgIcon">
+              <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
+            </svg>
+          </button>
+    </div>
+    <div class="col-md-7">
+        
+        <form class="container" *ngIf="photo">
+            <div class="form-group">
+                <label for="title" class="heading">Descripción</label>
+                <input type="text" class="form-control input" id="title" [(ngModel)]="photo.title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="description" class="heading">Autor</label>
+                <textarea rows="1" class="form-control input" id="description" [(ngModel)]="photo.description" name="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="newPhotoInput" class="heading">Subir nueva foto</label>
+                <input type="file" class="form-control input" id="newPhotoInput" (change)="onPhotoSelected($event)" accept="image/*">
+                <img [src]="newPhotoSelected || 'assets/image.png'" class="img-fluid" alt="No hay imagen" (click)="newPhotoInput.nativeElement.click()">
+            </div>
+            <button class="login-button c-button c-button--gooey" (click)="updatePhoto(photo.title, photo.description)">
+                Actualizar
+                <div class="c-button__blobs">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </button>
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: block; height: 0; width: 0;">
+                <defs>
+                  <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+                    <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                  </filter>
+                </defs>
+              </svg>
+              
+        </form>
+        
+          
+    </div>
+</div>
+</body>
+
+
+
+<ng-template #main_content>
+    <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" viewBox="0 0 200 200" class="pencil">
+        <defs>
+            <clipPath id="pencil-eraser">
+                <rect height="30" width="30" ry="5" rx="5"></rect>
+            </clipPath>
+        </defs>
+        <circle transform="rotate(-113,100,100)" stroke-linecap="round" stroke-dashoffset="439.82" stroke-dasharray="439.82 439.82" stroke-width="2" stroke="currentColor" fill="none" r="70" class="pencil__stroke"></circle>
+        <g transform="translate(100,100)" class="pencil__rotate">
+            <g fill="none">
+                <circle transform="rotate(-90)" stroke-dashoffset="402" stroke-dasharray="402.12 402.12" stroke-width="30" stroke="hsl(223,90%,50%)" r="64" class="pencil__body1"></circle>
+                <circle transform="rotate(-90)" stroke-dashoffset="465" stroke-dasharray="464.96 464.96" stroke-width="10" stroke="hsl(223,90%,60%)" r="74" class="pencil__body2"></circle>
+                <circle transform="rotate(-90)" stroke-dashoffset="339" stroke-dasharray="339.29 339.29" stroke-width="10" stroke="hsl(223,90%,40%)" r="54" class="pencil__body3"></circle>
+            </g>
+            <g transform="rotate(-90) translate(49,0)" class="pencil__eraser">
+                <g class="pencil__eraser-skew">
+                    <rect height="30" width="30" ry="5" rx="5" fill="hsl(223,90%,70%)"></rect>
+                    <rect clip-path="url(#pencil-eraser)" height="30" width="5" fill="hsl(223,90%,60%)"></rect>
+                    <rect height="20" width="30" fill="hsl(223,10%,90%)"></rect>
+                    <rect height="20" width="15" fill="hsl(223,10%,70%)"></rect>
+                    <rect height="20" width="5" fill="hsl(223,10%,80%)"></rect>
+                    <rect height="2" width="30" y="6" fill="hsla(223,10%,10%,0.2)"></rect>
+                    <rect height="2" width="30" y="13" fill="hsla(223,10%,10%,0.2)"></rect>
+                </g>
+            </g>
+            <g transform="rotate(-90) translate(49,-30)" class="pencil__point">
+                <polygon points="15 0,30 30,0 30" fill="hsl(33,90%,70%)"></polygon>
+                <polygon points="15 0,6 30,0 30" fill="hsl(33,90%,50%)"></polygon>
+                <polygon points="15 0,20 10,10 10" fill="hsl(223,10%,10%)"></polygon>
+            </g>
+        </g>
+    </svg>
+

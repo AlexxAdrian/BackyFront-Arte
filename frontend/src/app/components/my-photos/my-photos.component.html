@@ -1,0 +1,15 @@
+<body>
+  <div class="photo-gallery">
+    <div *ngFor="let photo of photos" class="gallery-item" (mouseenter)="showDescription = true" (mouseleave)="showDescription = false">
+      <img [src]="'http://localhost:4000/' + photo.imagePath" alt="Foto">
+      <div class="description" *ngIf="showDescription">
+        <div class="description-content">
+          <p>{{photo.description}}</p>
+          <button class="edit-button" (click)="selectedCard(photo._id)">
+            <i class="fas fa-edit"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

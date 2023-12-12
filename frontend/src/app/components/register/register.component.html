@@ -1,0 +1,37 @@
+<body>
+  <section>
+    <div class="app-register form-box">
+      <div class="form-value">
+        <form (submit)="register()">
+          <h2><b>Registrarse</b></h2>
+          <div class="inputbox">
+            <i class="fas fa-user" id="icon"></i>
+            <input type="text" id="username" name="username" [(ngModel)]="username" required>
+            <label for="">Usuario</label>
+          </div>
+          <div class="inputbox">
+            <i class="fas fa-envelope" id="icon"></i>
+            <input type="email" id="email" name="email" [(ngModel)]="email" required>
+            <label for="">Correo Electrónico</label>
+          </div>
+          <div class="inputbox">
+            <i class="fas fa-lock" id="icon"></i>
+            <input type="password" id="password" name="password" [(ngModel)]="password" required>
+            <label for="">Contraseña</label>
+          </div>
+          <div class="inputbox">
+            <i class="fa-solid fa-key" id="icon"></i>
+            <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" required>
+            <label for="">Confirmar Contraseña</label>
+          </div>
+          <button class="button type1" type="submit">
+            <span class="btn-txt">Registrarte</span>
+          </button>
+          <div class="register">
+            <p>¿Tienes una cuenta?<a href="/login">Entrar </a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>

@@ -1,0 +1,98 @@
+body {
+    position: relative;
+  }
+  
+  
+  .photo-gallery {
+    column-count: 5;
+    column-gap: 0.5em;
+    width: 100%; 
+  }
+  
+  .gallery-item {
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 0.5em;
+    outline: 2px solid #fff;
+    outline-offset: -10px;
+    overflow: hidden; 
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .edit-button {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .edit-button:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto; 
+    background: rgba(22, 22, 22, 0.1);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transition: height 0.5s ease-out;
+    text-align: left;
+    padding: 25px;
+    box-sizing: border-box;
+    opacity: 0;
+  }
+  
+  .description-content {
+    width: 100%;
+    text-align: left;
+    color: #fff;
+    margin-bottom: -28px; 
+  }
+  
+  .edit-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .edit-button:hover {
+    background-color: #050505;
+    color: #fff;
+  }
+  
+  .gallery-item:hover .description {
+    height: 100%;
+    opacity: 1;
+  }
+  
+  
+  
+  
+  
